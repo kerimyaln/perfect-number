@@ -1,12 +1,35 @@
-*.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+import java.util.Scanner;
+public class test_ {
+static Scanner sc;
+	public static void main(String[] args) {
+		sc=new Scanner(System.in); long e;
+		System.out.print("Enter a number: ");
+		e=sc.nextLong();
+		
+		mukemmelSayilariListele(e);
+		olmayanlar(e);}
+    public static void mukemmelSayilariListele (long m){
+	       long t; int y=0;
+	    for(long n=6;n<=m;n++){ t=0;
+    	  for(long c=1;c<n;c++){
+    		if(n%c==0){	t=t+c;  } } 
+	    if(t==n) { y++;
+	    System.out.print(n+" ");  }  } 
+        System.out.println();
+        System.out.println(y+" find perfect number  (ratio: % "+(double)(y)/10+")");
+        System.out.println();}
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+    public static void olmayanlar(long p){
+        	int r=0; long f=0;
+	   System.out.println("imperfect and insufficient numbers");
+	        for(long w=1;w<=p;w++){ f=0;
+		      for(long s=1;s<w;s++){
+			     if(w%s==0){ f+=s;  } }
+		         if(f>w){ r++;
+			   if(r%25!=0){ System.out.print(w+" ");
+			 if(w==p){ System.out.println();   } }
+			   else { System.out.println(w);   } } }
+	        System.out.println(r+" total found (ratio: % "+(double)(r)/10+")");  }
+    
+}
